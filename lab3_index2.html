@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Определение местоположения точки</title>
+    <style>
+        body {
+            font-family: "Yanone Kaffeesatz", sans-serif;
+            text-align: center;
+            background-color: #ffecd1;
+            margin: 22px;
+            padding:0;
+        }
+        header {
+            background-color: #ff8d00;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav {
+            background-color: #782908;
+            overflow: hidden;
+            text-align: left;
+        }
+        nav a {
+            display: inline-block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        footer {
+            font-family: "Poiret One", sans-serif;
+            background-color: #ff8d00;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        label {
+            font-size: 24px;
+        }
+        h1 {
+            font-family: "Poiret One", sans-serif;
+            font-size: 35px;
+            color: #000000;
+        }
+        h2 {
+            font-family: "Poiret One", sans-serif;
+            font-size: 18px;
+            color: #000000;
+        }
+        p {
+            font-size: 18px;
+            color:#000000;
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&family=Great+Vibes&family=Poiret+One&family=Yanone+Kaffeesatz:wght@200..700&display=swap" rel="stylesheet">
+</head>
+<body>
+<header>
+        <h1> Лабораторная работа № 3 </h1>
+</header>    
+<nav>
+    <a href="file:///C:/Users/HP/Desktop/УЧЕБА/3%20семестр/аип/лаб3/.dist/lab3_index.html#">Задание № 1</a>
+    <a href="file:///C:/Users/HP/Desktop/УЧЕБА/3%20семестр/аип/лаб3/.dist/lab3_index2.html#">Задание № 2</a>
+    <a href="file:///C:/Users/HP/Desktop/УЧЕБА/3%20семестр/аип/лаб3/.dist/lab3_index3.html#">Задание № 3</a>
+    <a href="file:///C:/Users/HP/Desktop/УЧЕБА/3%20семестр/аип/лаб3/.dist/lab3_index4.html#">Задание № 4</a>
+</nav>
+<h1>Определить местоположение точки</h1>
+<h2>«Если точка совпадает с началом координат > 0</h2>
+<h2>«Если точка лежит на оси OX > 1 </h2>
+<h2>«Если точка лежит на оси OY > 2 </h2>
+<h2>«Если точка не лежит на координатных осях > 3 </h2>
+<label for="inputx">Введите значение x:</label>
+<input type="text" id="inputx"><br><br>
+
+<label for="inputy">Введите значение y:</label>
+<input type="text" id="inputy"><br><br>
+
+<button id="checkButton">Проверить</button>
+<p id="output"></p>
+
+<script>
+  document.getElementById('checkButton').addEventListener('click', function() {
+  let x = parseFloat(document.getElementById('inputx').value);//Вводим значение первой переменной 
+  let y = parseFloat(document.getElementById('inputy').value);//Вводим значение второй переменной
+  if (Number.isInteger(x) && Number.isInteger(y)) { // Проверяем, являются ли x и y целыми числами
+    if (x == 0 && y == 0) { //Если точка совпадает с началом координат, то выводим 0
+      document.getElementById('output').innerText ="0";
+    } else if (y == 0) { //Если точка лежит на оси Оx, то выводим 1
+      document.getElementById('output').innerText ="1";
+        } else if (x == 0) {
+          document.getElementById('output').innerText ="2";
+        } else {
+          document.getElementById('output').innerText ="3";
+    }} else {
+    document.getElementById('output').innerText ="Введенные числа не являются целыми.";
+  }})
+</script>
+<footer>
+  <p>&copy; 2024 Лабораторная работа № 3.</p>
+</footer>
+</body>
+</html>
+ 

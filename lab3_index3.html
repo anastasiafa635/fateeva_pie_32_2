@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Нахождение решения системы уравнений</title>
+    <style>
+        body {
+            font-family: "Yanone Kaffeesatz", sans-serif;
+            text-align: center;
+            background-color: #ffecd1;
+            margin: 22px;
+            padding:0;
+        }
+        header {
+            background-color: #ff8d00;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav {
+            background-color: #782908;
+            overflow: hidden;
+            text-align: left;
+        }
+        nav a {
+            display: inline-block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        footer {
+            font-family: "Poiret One", sans-serif;
+            background-color: #ff8d00;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        label {
+            font-size: 24px;
+        }
+        h1 {
+            font-family: "Poiret One", sans-serif;
+            font-size: 35px;
+            color: #000000;
+        }
+        h2 {
+            font-family: "Poiret One", sans-serif;
+            font-size: 18px;
+            color: #000000;
+        }
+        p {
+            font-size: 18px;
+            color:#000000;
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&family=Great+Vibes&family=Poiret+One&family=Yanone+Kaffeesatz:wght@200..700&display=swap" rel="stylesheet">
+    <script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+  </head>
+<body>
+<header>
+        <h1> Лабораторная работа № 3 </h1>
+</header>    
+<nav>
+    <a href="file:///C:/Users/HP/Desktop/УЧЕБА/3%20семестр/аип/лаб3/.dist/lab3_index.html#">Задание № 1</a>
+    <a href="file:///C:/Users/HP/Desktop/УЧЕБА/3%20семестр/аип/лаб3/.dist/lab3_index2.html#">Задание № 2</a>
+    <a href="file:///C:/Users/HP/Desktop/УЧЕБА/3%20семестр/аип/лаб3/.dist/lab3_index3.html#">Задание № 3</a>
+    <a href="file:///C:/Users/HP/Desktop/УЧЕБА/3%20семестр/аип/лаб3/.dist/lab3_index4.html#">Задание № 4</a>
+</nav>
+<h1> Вычислить значение функции y=f(x) при произвольных значениях x</h1>
+<img src="img/3.jpg" height="200" alt="Система уравнений">
+<br><br>
+<label for="inputx">Введите числовое значение x:</label>
+<input type="text" id="inputx"><br><br>
+
+<label for="inputa">Введите числовое значение a:</label>
+<input type="text" id="inputa"><br><br>
+
+<label for="inputb">Введите числовое значение b:</label>
+<input type="text" id="inputb"><br><br>
+
+<button id="solveButton">Решить</button>
+<p id="output"></p>
+
+<script>
+  document.getElementById('solveButton').addEventListener('click', function() {
+  let x = parseFloat(document.getElementById('inputx').value); //Вводим значение x
+  let a = parseFloat(document.getElementById('inputa').value); //Вводим значение a
+  let b = parseFloat(document.getElementById('inputb').value); //Вводим значение b
+  let y;
+  if (!isNaN(x) && !isNaN(a) && !isNaN(b)) { 
+    if (x > 6 && x <= 8) {// проверяем первое условие
+      outputText = '(e^(a*x)+e^((-b)*x))/2'
+      y = (Math.E**(a*x) + Math.E **((-b)*x))/2; 
+      document.getElementById('output').innerText = `y = ${y.toFixed(5)}`;
+    } else if (x <= 6) {//проверяем второе условие
+      outputText = 'sin(a*x) + 2'
+      y = Math.sin(a*x) + 2;
+      document.getElementById('output').innerText = `y = ${y.toFixed(5)}`;
+    } else if (x > 8) {//проверяем третье условие
+      outputText = 'cos(b*x)^^2'
+      y = (Math.cos(b*x))**2;
+      document.getElementById('output').innerText = `y = ${y.toFixed(5)}`;
+    }} else {
+    document.getElementById('output').innerText = "Введенные данные не являются числами";
+    }})
+
+</script>
+<footer>
+  <p>&copy; 2024 Лабораторная работа № 3.</p>
+</footer>
+</body>
+</html>
+ 

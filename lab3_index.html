@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Проверка истинности высказывания </title>
+    <style>
+        body {
+            font-family: "Yanone Kaffeesatz", sans-serif;
+            text-align: center;
+            background-color: #ffecd1;
+            margin: 22px;
+            padding:0;
+        }
+        header {
+            background-color: #ff8d00;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav {
+            background-color: #782908;
+            overflow: hidden;
+            text-align: left;
+        }
+        nav a {
+            display: inline-block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        footer {
+            font-family: "Poiret One", sans-serif;
+            background-color: #ff8d00;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        label {
+            font-size: 24px;
+        }
+        h1 {
+            font-family: "Poiret One", sans-serif;
+            font-size: 35px;
+            color: #000000;
+        }
+        h2 {
+            font-family: "Poiret One", sans-serif;
+            font-size: 25px;
+            color: #000000;
+        }
+        p {
+            font-size: 18px;
+            color:#000000;
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&family=Great+Vibes&family=Poiret+One&family=Yanone+Kaffeesatz:wght@200..700&display=swap" rel="stylesheet">
+</head>
+<body>
+<header>
+        <h1> Лабораторная работа № 3 </h1>
+</header>    
+<nav>
+    <a href="file:///C:/Users/HP/Desktop/УЧЕБА/3%20семестр/аип/лаб3/.dist/lab3_index.html#">Задание № 1</a>
+    <a href="file:///C:/Users/HP/Desktop/УЧЕБА/3%20семестр/аип/лаб3/.dist/lab3_index2.html#">Задание № 2</a>
+    <a href="file:///C:/Users/HP/Desktop/УЧЕБА/3%20семестр/аип/лаб3/.dist/lab3_index3.html#">Задание № 3</a>
+    <a href="file:///C:/Users/HP/Desktop/УЧЕБА/3%20семестр/аип/лаб3/.dist/lab3_index4.html#">Задание № 4</a>
+</nav>
+<h1>Проверить истинность высказывания</h1>
+<h2><i>«Точка с координатами (x, y) лежит во второй координатной четверти».</i></h2>
+
+<label for="inputx">Введите значение x:</label>
+<input type="text" id="inputx"><br><br>
+
+<label for="inputy">Введите значение y:</label>
+<input type="text" id="inputy"><br><br>
+
+<button id="checkButton">Проверить</button>
+<p id="output"></p>
+
+<footer>
+    <p>&copy; 2024 Лабораторная работа № 3.</p>
+</footer>
+
+<script>
+    document.getElementById('checkButton').addEventListener('click', function() {
+    let x = document.getElementById('inputx').value;
+    let y = document.getElementById('inputy').value;
+    if (!isNaN(x) && !isNaN(y)) { //Проверяем, являются ли x и y числами
+        if (x < 0 && y > 0) { //Проверяем, в какой плоскости лежит точка
+            document.getElementById('output').innerText =`Точка с координатами (${x},${y}) лежит во второй координатной плоскости`;
+        } else {
+           document.getElementById('output').innerText =`Точка с координатами (${x},${y}) не лежит во второй координатной плоскости`;
+    }}  else {
+      document.getElementById('output').innerText =`Некорректный ввод, проверьте введенные данные`;
+    }})  
+</script>
+</body>
+</html>
+ 
