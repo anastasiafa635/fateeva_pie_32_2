@@ -1,11 +1,106 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Перемещение значений переменных</title>
+    <style>
+        body {
+            font-family: "Yanone Kaffeesatz", sans-serif;
+            text-align: center;
+            background-color: #fefae0;
+            margin: 22px;
+            padding:0;
+        }
+        header {
+            background-color: #ccd5ae;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav {
+            background-color: #ede9cd;
+            overflow: hidden;
+            text-align: left;
+        }
+        nav a {
+            float: left;
+            display: inline-block;
+            color: #000000;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        footer {
+            font-family: "Yanone Kaffeesatz", sans-serif;
+            background-color: #ccd5ae;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        label {
+            font-size: 24px;
+        }
+        h1 {
+            font-family: "Yanone Kaffeesatz", sans-serif;
+            font-size: 35px;
+            color: #000000;
+        }
+        h2 {
+            font-family: "Yanone Kaffeesatz", sans-serif;
+            font-size: 25px;
+            color: #000000;
+        }
+        p {
+            font-size: 18px;
+            color:#000000;
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&family=Great+Vibes&family=Yanone+Kaffeesatz:wght@200..700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <script src="js/n1.js"></script>
+<header>
+    <h1> Лабораторная работа № 1 </h1>
+</header>
+<nav>
+    <a href="file:///C:/Users/HP/Desktop/УЧЕБА/3%20семестр/аип/лаб2/.dist/index1.html#">Задание № 1</a>
+    <a href="file:///C:/Users/HP/Desktop/УЧЕБА/3%20семестр/аип/лаб2/.dist/index2.html#">Задание № 2</a>
+</nav>
+<h2>Исходные значения переменных</h2>
+<label for="inputA">Введите значение A:</label>
+<input type="text" id="inputA"><br><br>
+
+<label for="inputB">Введите значение B:</label>
+<input type="text" id="inputB"><br><br>
+
+<label for="inputC">Введите значение C:</label>
+<input type="text" id="inputC"><br><br>
+
+<button id="moveButton">Переместить значения</button>
+
+<h2>Значение переменных после перемещения</h2>
+<p id="output"></p>
+<footer>
+    <p>&copy; 2024 Лабораторная работа № 1.</p>
+</footer>
+<script>
+    document.getElementById('moveButton').addEventListener('click', function() {
+    let A = document.getElementById('inputA').value;
+    let B = document.getElementById('inputB').value;
+    let C = document.getElementById('inputC').value;
+    let temp = A; // Сохраняем значение A во временной переменной
+    A = B;         // Перемещаем значение B в A
+    B = C;         // Перемещаем значение C в B
+    C = temp;    // Перемещаем значение A в C
+
+    // Вывод новых значений переменных
+    document.getElementById("output").innerHTML = `A =  ${A}; B =  ${B}; C =  ${C}`;
+})
+</script>
 </body>
 </html>
